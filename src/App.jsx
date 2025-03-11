@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./index.css";
+import Header from "./components/Header";
+import PreparationTime from "./components/PreparationTime";
+import Ingredients from "./components/Ingredients";
+import Instruction from "./components/Instruction";
+import Nutrition from "./components/Nutrition";
+
+const omeletteOwner =
+  "https://unsplash.com/photos/a-plate-of-food-with-eggs-potatoes-and-sausage-8qTCKisD3RQ?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="md:my-30 md:mx-auto md:w-5xl md:rounded-4xl py-12 px-7 shadow-2xl">
+        <Header />
+        <main>
+          <PreparationTime />
+          <Ingredients />
+          <Instruction />
+          <Nutrition />
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
